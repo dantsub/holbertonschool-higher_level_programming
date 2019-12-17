@@ -4,9 +4,9 @@ def print_matrix_integer(matrix=[[]]):
     for row in matrix:
         for val in row:
             if (idx == 0):
-                print ('{}'.format(val), end='')
+                print ('{:d}'.format(val), end='')
             else:
-                print ('{:2}'.format(val), end='')
+                print ('{:2d}'.format(val), end='')
             idx += 1
         idx = 0
         print()
