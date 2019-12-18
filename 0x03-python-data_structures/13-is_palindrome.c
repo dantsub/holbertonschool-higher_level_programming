@@ -8,7 +8,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *cp_head = *head;
-	int cont = 0, buff[1024], idx;
+	int cont = 0, buff[2048], idx = 0;
 
 	if (!(*head) || !cp_head->next)
 		return (1);
@@ -17,13 +17,12 @@ int is_palindrome(listint_t **head)
 		cp_head = cp_head->next;
 		cont++;
 	}
-	idx = cont - 1;
-	cont = 0;
-	while (cont < idx)
+	while (cont > idx)
 	{
-		if (buff[idx] != buff[idx - cont])
+		if (buff[idx] != buff[cont - 1])
 			return (0);
-		cont++;
+		cont--;
+		idx++;
 	}
 	return (1);
 }
