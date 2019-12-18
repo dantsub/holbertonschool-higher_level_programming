@@ -8,18 +8,28 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *cp_head = *head, *cp_h, *h;
+	unsigned int cont = 0, cp_cont;
 
 	if (!(*head))
 		return (1);
 	h = NULL;
 	while (cp_head)
 	{
-		add_nodeint(&h, cp_head->n);
+		cont++;
 		cp_head = cp_head->next;
+	}
+	cont /= 2;
+	cp_cont = cont;
+	cp_head = *head;
+	while (cp_head && cont > 0)
+	{
+		add_nodeint_end(&h, cp_head->n);
+		cp_head = cp_head->next;
+		cont--;
 	}
 	cp_head = *head;
 	cp_h = h;
-	while (cp_head)
+	while (cp_head && cp_cont > 0)
 	{
 		if (cp_head->n != cp_h->n)
 		{
@@ -28,6 +38,7 @@ int is_palindrome(listint_t **head)
 		}
 		cp_head = cp_head->next;
 		cp_h = cp_h->next;
+		cp_cont--;
 	}
 	free_listint(h);
 	return (1);
