@@ -15,14 +15,9 @@ int is_palindrome(listint_t **head)
 	h = NULL;
 	while (cp_head)
 	{
-		cont++;
-		cp_head = cp_head->next;
-	}
-	cp_head = *head;
-	while (cp_head)
-	{
 		add_nodeint_end(&h, cp_head->n);
 		cp_head = cp_head->next;
+		cont++;
 	}
 	cp_head = *head;
 	cp_h = h;
