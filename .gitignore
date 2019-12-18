@@ -1,0 +1,11 @@
+my_main.py
+*-main.py
+main.py
+main.pyc
+*~
+*#
+*-main.c
+10-linked_lists.c
+linked_lists.c
+cycle
+__pycache__
