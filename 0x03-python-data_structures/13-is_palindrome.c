@@ -14,10 +14,15 @@ int is_palindrome(listint_t **head)
 		return (1);
 	h = NULL;
 	while (cp_head)
-	{
-		add_nodeint(&h, cp_head->n);
+	{	cont++;
 		cp_head = cp_head->next;
-		cont++;
+	}
+	cp_head = *head;
+	while (cp_head && cont / 2 > 0)
+	{
+		add_nodeint_end(&h, cp_head->n);
+		cp_head = cp_head->next;
+		cont--;
 	}
 	cp_head = *head;
 	cp_h = h;
@@ -34,25 +39,4 @@ int is_palindrome(listint_t **head)
 	}
 	free_listint(h);
 	return (1);
-}
-/**
-  * add_nodeint - adds a new node at the beginning of a listint_t list.
-  * @head: node.
-  * @n: constant int.
-  * Return: the address of the new element, or NULL if it failed
-  */
-listint_t *add_nodeint(listint_t **head, const int n)
-{
-	listint_t *new;
-
-	new = malloc(sizeof(listint_t));
-	if (!new)
-		return (NULL);
-	new->n = n;
-	if (!(*head))
-		new->next = NULL;
-	else
-		new->next = *head;
-	*head = new;
-	return (new);
 }
