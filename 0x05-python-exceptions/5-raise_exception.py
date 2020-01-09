@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 def raise_exception():
-    return 2 / 0
+    return 98 + 'holberton'
