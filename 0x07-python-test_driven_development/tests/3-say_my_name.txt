@@ -26,7 +26,7 @@ passing invalid first name
 Traceback (most recent call last):
 TypeError: first_name must be a string
 
-passing invalid first name
+passing invalid last name
 >>> say_my_name("Romeo", None)
 Traceback (most recent call last):
 TypeError: last_name must be a string
@@ -39,3 +39,8 @@ passing invalid first name
 >>> say_my_name()
 Traceback (most recent call last):
 TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+passing invalid first name
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
