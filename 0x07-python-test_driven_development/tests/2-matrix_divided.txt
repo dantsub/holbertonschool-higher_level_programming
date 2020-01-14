@@ -1,0 +1,70 @@
+The ``matrix_divided`` module
+=============================
+
+Using ``matrix_divided``
+------------------------
+
+import the matrix_divided module
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+passing a int like list
+>>> matrix_divided(int(2), 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+passing a list of integers
+>>> matrix_divided([1, 2, 3, 4, 5, 6], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+passing a list of list and integer
+>>> matrix_divided([[1, 2, 3, 4, 5, 6], 2], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+passing a list a lists of different type elements
+>>> matrix_divided([[1, "2", True], [2.4, (1, 2), []]], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+passing a list a lists with different len
+>>> matrix_divided([[1, 2, 3], [1, 2]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+passing a valid list and invalid div 
+>>> matrix_divided([[1,2,3]], "2")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+passing a valid list and invalid div 
+>>> matrix_divided([[1,2,3]], None)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+passing a valid list and div by 0
+>>> matrix_divided([[1,2,3]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+passing a valid list and invalid div 
+>>> matrix_divided([[1,2,3]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+passing a valid list and valid div 
+>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 2)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+passing a valid list and valid div 
+>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 3)
+[[0.67, 1.33, 2.0], [2.67, 3.33, 4.0]]
+
+passing a valid list and valid div 
+>>> matrix_divided([[2.5, 4.0, 6.8], [8, 10, 12]], 3)
+[[0.83, 1.33, 2.27], [2.67, 3.33, 4.0]]
+
+divide a empty list
+>>> matrix_divided([], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
