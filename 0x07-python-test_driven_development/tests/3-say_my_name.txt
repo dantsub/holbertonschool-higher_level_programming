@@ -30,3 +30,7 @@ passing invalid first name
 >>> say_my_name("Romeo", None)
 Traceback (most recent call last):
 TypeError: last_name must be a string
+
+passing valid
+>>> say_my_name()
+My name is  
