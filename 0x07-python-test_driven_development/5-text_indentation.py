@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""  """
+""" text identation """
+
+
 def text_indentation(text):
-    """
-    """
+    """ text identation """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     text = text.rstrip()

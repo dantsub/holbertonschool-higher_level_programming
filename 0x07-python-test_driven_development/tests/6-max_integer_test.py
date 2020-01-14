@@ -10,7 +10,8 @@ class TestMaxInteger(unittest.TestCase):
     def testing(self):
         self.assertEqual(max_integer([1, 3, 4, 56, 78, 9]), 78)
         self.assertEqual(max_integer([-80, 80, 92, 99]), 99)
-        self.assertEqual(max_integer([1.190, 78.2, 6.3, float(1)]), float(78.2))
+        self.assertEqual(max_integer([1.190, 78.2, 6.3, float(1)]),
+                         float(78.2))
         self.assertEqual(max_integer([-1000, 1]), 1)
         self.assertEqual(max_integer([0, 0, 0, 0]), 0)
         self.assertEqual(max_integer([-1, -2, -3, -4, -5]), -1)
@@ -21,4 +22,3 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-10]), -10)
         self.assertEqual(max_integer([1.1, 1, 2.2, 2]), 2.2)
         self.assertEqual(max_integer([3/2, 1, 0.4, 1-0]), 3/2)
-    
