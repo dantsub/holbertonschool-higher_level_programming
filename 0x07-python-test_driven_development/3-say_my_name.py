@@ -2,7 +2,7 @@
 """ Print name """
 
 
-def say_my_name(first_name, last_name=""):
+def say_my_name(first_name="", last_name=""):
     """ Print full name
     """
     if not isinstance(first_name, str):
