@@ -7,49 +7,32 @@ Using ``print_square``
 import the print_square module
 >>> print_square = __import__('4-print_square').print_square
 
+passing a invalid size (float)
+>>> print_square(2.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+passing a valid size
+>>> print_square(int("1"))
+#
+
+passing a valid size
+>>> print_square(int(10))
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
 passing a invalid size (string)
 >>> print_square("2")
 Traceback (most recent call last):
 TypeError: size must be an integer
-
-passing a valid size (float)
->>> print_square(2.5)
-##
-##
-
-passing a invalid size (None)
->>> print_square(None)
-Traceback (most recent call last):
-TypeError: size must be an integer
-
-passing a valid size
->>> print_square(int("3"))
-###
-###
-###
-
-passing a valid size
->>> print_square(int(20))
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
-####################
 
 passing a invalid size
 >>> print_square(-3)
@@ -63,22 +46,21 @@ ValueError: size must be >= 0
 
 passing a invalid size
 >>> print_square(4.0)
-####
-####
-####
-####
+Traceback (most recent call last):
+TypeError: size must be an integer
 
 passing a valid size
 >>> print_square(0)
 
 passing a invalid size
->>> print_square(False)
+>>> print_square(0.0)
 Traceback (most recent call last):
 TypeError: size must be an integer
 
-passing a invalid size
->>> print_square(0.0)
-
+passing a invalid size (None)
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
 
 passing a negative float
 >>> print_square(-2.6)
