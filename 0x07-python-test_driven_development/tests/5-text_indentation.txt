@@ -1,0 +1,88 @@
+The ``text_indentation`` module
+===============================
+
+Testing ``text_indentation``
+----------------------------
+
+import the text_indentation module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+passing invalid text
+>>> text_indentation(True)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+passing invalid text
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+passing valid text
+>>> text_indentation("""This. is. a. test""")
+This.
+<BLANKLINE>
+is.
+<BLANKLINE>
+a.
+<BLANKLINE>
+test
+
+passing valid text starting and ending with spaces
+>>> text_indentation("""   this. is. a. test.   """)
+this.
+<BLANKLINE>
+is.
+<BLANKLINE>
+a.
+<BLANKLINE>
+test.
+<BLANKLINE>
+
+passing valid text starting with spaces
+>>> text_indentation("""   this. is. a. test""")
+this.
+<BLANKLINE>
+is.
+<BLANKLINE>
+a.
+<BLANKLINE>
+test
+
+passing valid text with all the characters (. ? :) 
+>>> text_indentation("""this: is? a. test        """)
+this:
+<BLANKLINE>
+is?
+<BLANKLINE>
+a.
+<BLANKLINE>
+test
+
+passing valid text without the special characters
+>>> text_indentation("""this is a test""")
+this is a test
+
+passing valid text without the special characters and spaces at the begining
+>>> text_indentation("""     this is a test""")
+this is a test
+
+passing valid text without the special characters and spaces at the end
+>>> text_indentation("""this is a test          """)
+this is a test
+
+passing valid text
+>>> text_indentation("""?this .is :a ,test""")
+?
+<BLANKLINE>
+this .
+<BLANKLINE>
+is :
+<BLANKLINE>
+a ,test
+
+passing valid text (empty)
+>>> text_indentation("""""")
+
+
+passing valid text (empty)
+>>> text_indentation("")
