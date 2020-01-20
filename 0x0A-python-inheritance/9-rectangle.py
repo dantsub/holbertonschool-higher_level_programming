@@ -25,7 +25,9 @@ class Rectangle(BaseGeometry):
         """
         return self.__width * self.__height
 
-    def __repr__(self):
+    def __str__(self):
         """ Return description of rectangle
         """
-        return '[Rectangle] ' + str(self.__width) + '/' + str(self.__height)
+        rep = '[' + str(type(self).__name__) + '] ' \
+        + str(self.__width) + '/' + str(self.__height)
+        return rep
