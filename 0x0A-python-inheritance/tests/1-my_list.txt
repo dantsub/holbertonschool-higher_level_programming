@@ -62,3 +62,19 @@ passing parameter to print_sorted
 >>> my_list.print_sorted(3)
 Traceback (most recent call last):
 TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+empty
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+various types
+>>> my_list = MyList(['a', 98, True, (3,)])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: unorderable types: int() < str()
+
+list of strings
+>>> my_list = MyList(['Holberton', 'betty', '89', 'School', 'Joshua'])
+>>> my_list.print_sorted()
+['89', 'Holberton', 'Joshua', 'School', 'betty']
