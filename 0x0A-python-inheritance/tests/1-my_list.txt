@@ -52,6 +52,9 @@ append method
 >>> print(my_list)
 [9, 98, 1]
 
+>>> my_list[2] = "Holberton"
+>>> print(my_list)
+[9, 98, 'Holberton']
 
 >>> my_list = MyList()
 >>> print(my_list.print_sorted)
@@ -76,5 +79,11 @@ TypeError: unorderable types: int() < str()
 
 list of strings
 >>> my_list = MyList(['Holberton', 'betty', '89', 'School', 'Joshua'])
+>>> print(my_list)
+['Holberton', 'betty', '89', 'School', 'Joshua']
+
 >>> my_list.print_sorted()
 ['89', 'Holberton', 'Joshua', 'School', 'betty']
+
+>>> print(my_list)
+['Holberton', 'betty', '89', 'School', 'Joshua']
