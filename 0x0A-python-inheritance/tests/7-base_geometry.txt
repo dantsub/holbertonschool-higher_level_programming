@@ -19,6 +19,9 @@ Call method area without args
 Traceback (most recent call last):
 Exception: area() is not implemented
 
+>>> print(base) # doctest: +ELLIPSIS
+<7-base_geometry.BaseGeometry object at ...>
+
 Create object passing parameter
 >>> base = BaseGeometry("base")
 Traceback (most recent call last):
@@ -28,6 +31,9 @@ Call method area with parameters
 >>> base.area(12, "")
 Traceback (most recent call last):
 TypeError: area() takes 1 positional argument but 3 were given
+
+>>> print(base.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+<bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at...>>
 
 Call method area with parameter
 >>> base.area(98)
@@ -49,6 +55,9 @@ Call method integer_validator second arg is negative
 Traceback (most recent call last):
 ValueError: size must be greater than 0
 
+>>> print(base.integer_validator) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+<bound method BaseGeometry.integer_validator of <7-base_geometry.BaseGeometry object at...>>
+
 Call method integer_validator second arg isn't int
 >>> base.integer_validator("size", "betty")
 Traceback (most recent call last):
@@ -58,3 +67,6 @@ Call method integer_validator without args
 >>> base.integer_validator()
 Traceback (most recent call last):
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+call method integer_validator valid
+>>> base.integer_validator("size", 3)
