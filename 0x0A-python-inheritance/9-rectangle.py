@@ -29,5 +29,5 @@ class Rectangle(BaseGeometry):
         """ Return description of rectangle
         """
         rep = '[' + str(type(self).__name__) + '] ' \
-        + str(self.__width) + '/' + str(self.__height)
+            + str(self.__width) + '/' + str(self.__height)
         return rep
