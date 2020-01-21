@@ -42,3 +42,13 @@ TypeError: a must be an integer
 add, passing only floats
 >>> add_integer(float(13), float(5))
 18
+
+missing two args
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+missing one arg
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
