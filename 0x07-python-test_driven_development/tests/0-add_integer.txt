@@ -53,6 +53,11 @@ missing one arg
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+missing one arg
+>>> add_integer(1, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
 infinity convert
 >>> add_integer(float('inf'))
 Traceback (most recent call last):
