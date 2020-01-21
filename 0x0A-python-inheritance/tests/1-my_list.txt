@@ -39,3 +39,15 @@ Create object with None as a parameter
 >>> my_list = MyList(None)
 Traceback (most recent call last):
 TypeError: 'NoneType' object is not iterable
+
+type of my_list
+>>> type(my_list)
+<class '1-my_list.MyList'>
+
+append method
+>>> my_list = MyList()
+>>> my_list.append(9)
+>>> my_list.append(98)
+>>> my_list.append(1)
+>>> print(my_list)
+[9, 98, 1]
