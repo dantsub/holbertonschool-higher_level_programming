@@ -6,3 +6,36 @@ Using ``my_list``
 
 import the my_list module.
 >>> MyList = __import__('1-my_list').MyList
+
+Create object with list like a parameter
+>>> my_list = MyList([1, 2, 6, 4, 5])
+
+Print list
+>>> print(my_list)
+[1, 2, 6, 4, 5]
+
+Print sorted list
+>>> my_list.print_sorted()
+[1, 2, 4, 5, 6]
+
+Create object with negative number
+>>> my_list = MyList([-98, -7, -1, -70])
+
+Print list sorted
+>>> my_list.print_sorted()
+[-98, -70, -7, -1]
+
+Create object without parameter and printed
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+Create object with 2 args
+>>> my_list = MyList([3, 6], (9, 9))
+Traceback (most recent call last):
+TypeError: list() takes at most 1 argument (2 given)
+
+Create object with None as a parameter
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+TypeError: 'NoneType' object is not iterable

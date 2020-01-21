@@ -1,0 +1,60 @@
+The ``base_geometry`` module
+==========================
+
+Using ``base_geometry``
+---------------------
+
+import the base_geometry module.
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Create object and print
+>>> base = BaseGeometry()
+
+Type of object
+>>> type(base)
+<class '7-base_geometry.BaseGeometry'>
+
+Call method area without args
+>>> base.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+Create object passing parameter
+>>> base = BaseGeometry("base")
+Traceback (most recent call last):
+TypeError: object() takes no parameters
+
+Call method area with parameters
+>>> base.area(12, "")
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 3 were given
+
+Call method area with parameter
+>>> base.area(98)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+Call method integer_validator with 1 arg
+>>> base.integer_validator("size")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Call method integer_validator second arg is 0
+>>> base.integer_validator("size", 0)
+Traceback (most recent call last):
+ValueError: size must be greater than 0
+
+Call method integer_validator second arg is negative
+>>> base.integer_validator("size", -98)
+Traceback (most recent call last):
+ValueError: size must be greater than 0
+
+Call method integer_validator second arg isn't int
+>>> base.integer_validator("size", "betty")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Call method integer_validator without args
+>>> base.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
