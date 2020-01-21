@@ -82,7 +82,7 @@ Traceback (most recent call last):
 TypeError: size must be an integer
 
 call method integer_validator invalid
->>> base.integer_validator("size", [98])
+>>> base.integer_validator("size", [[98]])
 Traceback (most recent call last):
 TypeError: size must be an integer
 
@@ -97,6 +97,11 @@ Traceback (most recent call last):
 TypeError: size must be an integer
 
 call method integer_validator invalid
->>> base.integer_validator("size", None)
+>>> base.integer_validator("size", {3, 2})
 Traceback (most recent call last):
 TypeError: size must be an integer
+
+If name is not a string will be printed
+>>> base.integer_validator(23, {'a': 2})
+Traceback (most recent call last):
+TypeError: 23 must be an integer
