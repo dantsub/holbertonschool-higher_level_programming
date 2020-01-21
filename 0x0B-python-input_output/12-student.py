@@ -17,7 +17,7 @@ class Student():
             representation of a Student instance
         """
         dicc = self.__dict__
-        if (type(attrs) == list and 
+        if (type(attrs) == list and
                 all(type(st) == str for st in attrs)):
             return {y: dicc[y] for y in dicc if y in attrs}
         return dicc
