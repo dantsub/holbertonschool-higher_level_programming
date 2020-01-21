@@ -70,3 +70,33 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 
 call method integer_validator valid
 >>> base.integer_validator("size", 3)
+
+call method integer_validator invalid
+>>> base.integer_validator("size", True)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+call method integer_validator invalid
+>>> base.integer_validator("size", (98,))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+call method integer_validator invalid
+>>> base.integer_validator("size", [98])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+call method integer_validator invalid
+>>> base.integer_validator("size", [98])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+call method integer_validator invalid
+>>> base.integer_validator("size", None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+call method integer_validator invalid
+>>> base.integer_validator("size", None)
+Traceback (most recent call last):
+TypeError: size must be an integer
