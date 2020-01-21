@@ -57,6 +57,11 @@ passing a invalid size
 Traceback (most recent call last):
 TypeError: size must be an integer
 
+missing one arg
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
+
 passing a invalid size (None)
 >>> print_square(None)
 Traceback (most recent call last):
