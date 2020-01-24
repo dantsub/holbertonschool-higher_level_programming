@@ -3,6 +3,7 @@
 Base module
 """
 import json
+import csv
 
 
 class Base():
@@ -56,3 +57,42 @@ class Base():
                 instance = cls(2, 4)
             instance.update(**dictionary)
             return instance
+
+    @classmethod
+    def load_from_file(cls):
+        filename = '{}.json'.format(cls.__name__)
+        try:
+            with open(filename, mode='r', encoding='utf-8') as file:
+                ls_of_dic = Base.from_json_string(file.read())
+                return [cls.create(**dics) for dics in ls_of_dic]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        csvfile = '{}.csv'.format(cls.__name__)
+        with open(csvfile, 'w', newline='') as csvf:
+            if list_objs is None or list_objs == []:
+                csvf.write('[]')
+            else:
+                if cls.__name__ == 'Square':
+                    fields = ["id", "size", "x", "y"]
+                else:
+                    fields = ["id", "width", "height", "x", "y"]
+                doc = csv.DictWriter(csvf, fieldnames=fields)
+                [doc.writerow(inst.to_dictionary()) for inst in list_objs]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        csvfile = '{}.csv'.format(cls.__name__)
+        try:
+            with open(csvfile, 'r', newline='') as csvf:
+                if cls.__name__ == 'Square':
+                    fields = ["id", "size", "x", "y"]
+                else:
+                    fields = ["id", "width", "height", "x", "y"]
+                doc = csv.DictReader(csvf, fieldnames=fields)
+                ls_of_dics = [{k: int(v) for k, v in dic.items()} for dic in doc]
+                return [cls.create(**dics) for dics in ls_of_dics]
+        except IOError:
+            return []
