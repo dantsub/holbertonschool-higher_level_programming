@@ -72,7 +72,29 @@ class Rectangle(Base):
          for i in range(self.__height)]
 
     def __str__(self):
-        string = "[Rectangle] ({}) ".format(self.id)
+        string = "[{}] ({}) ".format(type(self).__name__, self.id)
         string += "{}/{} -".format(self.__x, self.__y)
-        string += " {}/{}".format(self.__width, self.__height)
+        if type(self) == Rectangle:
+            string += " {}/{}".format(self.__width, self.__height)
+        else:
+            string += " {}".format(self.__width)
         return string
+
+    def update(self, *args, **kwargs):
+        if type(self) == Rectangle:
+            attrs = ["id", "width", "height", "x", "y"]
+        else:
+            attrs = ["id", "size", "x", "y"]
+        if len(args) > 0:
+            for idx, arg in enumerate(args):
+                setattr(self, attrs[idx], arg)
+        else:
+            for key, val in kwargs.items():
+                setattr(self, key, val)
+
+    def to_dictionary(self):
+        if type(self) == Rectangle:
+            attrs = ["id", "width", "height", "x", "y"]
+        else:
+            attrs = ["id", "size", "x", "y"]
+        return {key: getattr(self, key) for key in attrs}
