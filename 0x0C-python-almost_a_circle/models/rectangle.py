@@ -100,13 +100,14 @@ class Rectangle(Base):
             attrs = ["id", "size", "x", "y"]
         if args and len(args) > 0:
             for idx, arg in enumerate(args):
-                if attrs[idx] == "id" and arg == None:
+                if attrs[idx] == "id" and arg is None:
                     self.__init__(self.width, self.height, self.x, self.y)
                 setattr(self, attrs[idx], arg)
         elif kwargs and len(kwargs) > 0:
             for key, val in kwargs.items():
-                if key == "id" and val == None:
-                    self.__init__(self.width, self.height, self.x, self.y)
+                if key == "id":
+                    if val is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
                 setattr(self, key, val)
 
     def to_dictionary(self):
