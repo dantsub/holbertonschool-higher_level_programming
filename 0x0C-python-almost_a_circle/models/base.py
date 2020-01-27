@@ -25,7 +25,6 @@ class Base():
 
     @id.setter
     def id(self, value):
-
         """ Set of id attribute
         Args:
             value (int): value of id
