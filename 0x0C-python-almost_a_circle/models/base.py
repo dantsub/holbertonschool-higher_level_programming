@@ -33,7 +33,6 @@ class Base():
         self.__id = value
 
     def to_json_string(list_dictionaries):
-
         """ Method that returns the JSON string
             representation of list_dictionaries
         Args:
@@ -48,7 +47,6 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
-
         """ Method that writes the JSON string
             representation of list_objs to a file
         Args:
@@ -67,7 +65,6 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-
         """ Method that returns the list of the
             JSON string representation json_string
         Args:
@@ -81,7 +78,6 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-
         """ Method that returns an instance with all attributes already set
         Args:
             cls (class): Rectangle or Square
@@ -96,7 +92,6 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
-
         """ That returns a list of instances
         Args:
             cls (class): Rectangle or Square
@@ -116,7 +111,6 @@ class Base():
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-
         """ Method thats serializes in CSV
         Args:
             cls (class): Rectangle or Square
@@ -142,7 +136,6 @@ class Base():
 
     @classmethod
     def load_from_file_csv(cls):
-
         """ Method thats deserializes in CSV
         Args:
             cls (class): Rectangle or Square
