@@ -31,6 +31,7 @@ class Base():
         """
         self.__id = value
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ Method that returns the JSON string
             representation of list_dictionaries
