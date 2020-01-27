@@ -85,10 +85,12 @@ class Base():
                 can be thought of as a double pointer to a dictionary
         return: Instance
         """
-        if dictionary and dictionary is not {}:
+        if cls.__name__ == "Rectangle":
             instance = cls(2, 4)  # create a new instance
-            instance.update(**dictionary)
-            return instance
+        else:
+            instance = cls(2)
+        instance.update(**dictionary)
+        return instance
 
     @classmethod
     def load_from_file(cls):
