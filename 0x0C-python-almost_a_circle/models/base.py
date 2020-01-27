@@ -28,8 +28,7 @@ class Base():
 
         """ Set of id attribute
         Args:
-
-            value (int):
+            value (int): value of id
         """
         self.__id = value
 
@@ -50,16 +49,13 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
 
-        """ Description
-        :type cls:
-        :param cls:
+        """ Method that writes the JSON string
+            representation of list_objs to a file
+        Args:
+            cls: Class, maybe Rectangle or Square
 
-        :type list_objs:
-        :param list_objs:
-
-        :raises:
-
-        :rtype:
+        list_objs: a list of instances who inherits of Base
+            - example: list of Rectangle or list of Square instances
         """
         filename = cls.__name__ + '.json'
         with open(filename, mode='w', encoding='utf-8') as file:
