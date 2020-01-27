@@ -98,9 +98,9 @@ class Rectangle(Base):
             attrs = ["id", "width", "height", "x", "y"]
         else:
             attrs = ["id", "size", "x", "y"]
-        if len(args) > 0:
+        if args and len(args) > 0:
             [setattr(self, attrs[idx], arg) for idx, arg in enumerate(args)]
-        else:
+        elif kwargs and len(kwargs) > 0:
             [setattr(self, key, val) for key, val in kwargs.items()]
 
     def to_dictionary(self):
