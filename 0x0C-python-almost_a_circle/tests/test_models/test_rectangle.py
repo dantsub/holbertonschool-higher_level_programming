@@ -45,52 +45,49 @@ class TestRectangle(unittest.TestCase):
         """ test update only args """
         r1 = Rectangle(10, 10)
         r1.update(89)
-        capture = TestClassRectangle.capture_stdout(r1, "print")
+        capture = TestRectangle.capture_stdout(r1, "print")
         correct = "[Rectangle] (89) 0/0 - 10/10\n"
         self.assertEqual(correct, capture.getvalue())
         r1 = Rectangle(10, 10, 10, 10, 10)
         r1.update(89, 29)
-        capture = TestClassRectangle.capture_stdout(r1, "print")
+        capture = TestRectangle.capture_stdout(r1, "print")
         correct = "[Rectangle] (89) 10/10 - 29/10\n"
         self.assertEqual(correct, capture.getvalue())
         r1 = Rectangle(10, 10, 10, 10, 10)
         r1.update()
-        capture = TestClassRectangle.capture_stdout(r1, "print")
+        capture = TestRectangle.capture_stdout(r1, "print")
         correct = "[Rectangle] (10) 10/10 - 10/10\n"
         self.assertEqual(correct, capture.getvalue())
 
     def test_update_kwargs(self):
         """ test update only kwargs """
-
         r2 = Rectangle(10, 10)
         r2.update(id=89)
-        capture = TestClassRectangle.capture_stdout(r2, "print")
+        capture = TestRectangle.capture_stdout(r2, "print")
         correct = "[Rectangle] (89) 0/0 - 10/10\n"
         self.assertEqual(correct, capture.getvalue())
         r2 = Rectangle(10, 10, 10, 10, 10)
         r2.update(width=29, id=89)
-        capture = TestClassRectangle.capture_stdout(r2, "print")
+        capture = TestRectangle.capture_stdout(r2, "print")
         correct = "[Rectangle] (89) 10/10 - 29/10\n"
         self.assertEqual(correct, capture.getvalue())
         r2 = Rectangle(10, 10, 10, 10, 10)
         r2.update()
-        capture = TestClassRectangle.capture_stdout(r2, "print")
+        capture = TestRectangleT.capture_stdout(r2, "print")
         correct = "[Rectangle] (10) 10/10 - 10/10\n"
-        self.assertEqual(correct, capture.getvalue()
+        self.assertEqual(correct, capture.getvalue())
 
     def test_display(self):
-        """ test method display """
-
         r1 = Rectangle(1, 1)
         self.assertEqual(r1.display(), None)
         r1 = Rectangle(3, 1)
         self.assertEqual(r1.display(), None)
         r1 = Rectangle(1, 1)
-        capture = TestClassRectangle.capture_stdout(r1, "display")
+        capture = TestRectangle.capture_stdout(r1, "display")
         correct = "#\n"
         self.assertEqual(correct, capture.getvalue())
         r1 = Rectangle(1, 2)
-        capture = TestClassRectangle.capture_stdout(r1, "display")
+        capture = TestRectangle.capture_stdout(r1, "display")
         correct = "#\n#\n"
         self.assertEqual(correct, capture.getvalue())
 
@@ -123,17 +120,16 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r2.to_dictionary(1)
 
-
     @staticmethod
     def capture_stdout(obj, method):
         """
         return the stdout by 'bdbaraban'
         """
-        ioVal = io.StringIO()
-        stdout = ioVal
+        val = io.StringIO()
+        stdout = val
         if method == "print":
             print(obj)
         else:
             obj.display()
         stdout = __stdout__
-        return ioVal
+        return Val

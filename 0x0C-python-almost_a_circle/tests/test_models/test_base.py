@@ -14,7 +14,7 @@ class TestBase(unittest.TestCase):
     def test_id(self):
         """ test id """
         b1 = Base()
-        self.assertEqual(b1.id, 5)
+        self.assertEqual(b1.id, 1)
         b2 = Base()
         self.assertEqual(b2.id, 2)
         b3 = Base(89)
@@ -97,16 +97,3 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file([save])
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(str(save), str(list_rectangles_output[0]))
-
-    #  def test_load_from_file(self):
-        """ test load from file """
-
-
-    #  def test_from_json_string(self):
-        """ test from json string """
-
-    #  def test_save_to_file_csv(self):
-        """ test save to file csv """
-
-    #  def test_load_from_file_csv(self):
-        """ test load from file csv """

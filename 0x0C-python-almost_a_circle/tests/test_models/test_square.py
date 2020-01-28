@@ -76,7 +76,7 @@ class TestSquare(unittest.TestCase):
         r2.update()
         capture = TestClassRectangle.capture_stdout(r2, "print")
         correct = "[Square] (10) 10/10 - 10\n"
-        self.assertEqual(correct, capture.getvalue()
+        self.assertEqual(correct, capture.getvalue())
 
     def test_display(self):
         """ test method display """
@@ -122,7 +122,6 @@ class TestSquare(unittest.TestCase):
         r2 = Square(1, 1, 1, 1, 1)
         with self.assertRaises(TypeError):
             r2.to_dictionary(1)
-
 
     @staticmethod
     def capture_stdout(obj, method):
