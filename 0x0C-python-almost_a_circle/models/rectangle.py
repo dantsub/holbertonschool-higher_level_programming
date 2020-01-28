@@ -96,7 +96,8 @@ class Rectangle(Base):
         """ update arguments of class """
         attrs = ["id", "width", "height", "x", "y"]
         if args:
-            [setattr(self, attrs[idx], arg) for idx, arg in enumerate(args)]
+            [setattr(self, attrs[idx], arg) for idx, arg in enumerate(args)
+             if idx < 5]
         else:
             [setattr(self, key, val) for key, val in kwargs.items()]
 

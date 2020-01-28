@@ -131,7 +131,7 @@ class Base():
             else:
                 if cls.__name__ == 'Square':
                     fields = ["id", "size", "x", "y"]
-                else:
+                if cls.__name__ == 'Rectangle':
                     fields = ["id", "width", "height", "x", "y"]
                 doc = csv.DictWriter(csvf, fieldnames=fields)
                 [doc.writerow(inst.to_dictionary()) for inst in list_objs]

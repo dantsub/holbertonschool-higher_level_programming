@@ -439,12 +439,6 @@ class TestBase_save_to_file_csv(unittest.TestCase):
         with open("Square.csv", "r") as f:
             self.assertTrue("8,10,7,2\n3,8,1,2", f.read())
 
-    def test_save_to_file__csv_cls_name(self):
-        s = Square(10, 7, 2, 8)
-        Base.save_to_file_csv([s])
-        with open("Base.csv", "r") as f:
-            self.assertTrue("8,10,7,2", f.read())
-
     def test_save_to_file_csv_overwrite(self):
         s = Square(9, 2, 39, 2)
         Square.save_to_file_csv([s])
