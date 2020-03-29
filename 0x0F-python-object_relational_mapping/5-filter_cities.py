@@ -12,6 +12,7 @@ if __name__ == "__main__":
     cursor.execute("SELECT cities.name FROM cities " +
                    "JOIN states ON cities.state_id = states.id " +
                    "WHERE states.name = %s ORDER BY cities.id;", (name,))
-    print(", ".join([entry[0] for entry in cursor.fetchall]))  # print records
+    # print records
+    print(", ".join([entry[0] for entry in cursor.fetchall()]))
     cursor.close()  # close cursor
     db.close()  # close connection
