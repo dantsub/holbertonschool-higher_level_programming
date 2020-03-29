@@ -10,7 +10,7 @@ if __name__ == "__main__":
     db = mdb.connect(user=user, passwd=pwd, db=data)  # connection
     cursor = db.cursor()  # Cursor class
     # execute query
-    cursor.execute("SELECT * FROM `states` name=%s " +
+    cursor.execute("SELECT * FROM `states` WHERE name=%s " +
                    "ORDER BY `id` ASC;", (name, ))
     [print(record) for record in cursor.fetchall()]  # print records
     cursor.close()  # close cursor
