@@ -21,5 +21,5 @@ if __name__ == "__main__":
     # get id new record
     id_record = session.query(State).filter_by(name=name).all()
     # print id record
-    print("{}: {}".format(id_record[0].id))
+    print("{}".format(id_record[0].id))
     session.close()  # close session
