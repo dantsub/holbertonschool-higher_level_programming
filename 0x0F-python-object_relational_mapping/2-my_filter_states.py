@@ -9,7 +9,7 @@ if __name__ == "__main__":
     db = mdb.connect(user=user, passwd=pwd, db=data)  # connection
     cursor = db.cursor()  # Cursor class
     # execute query
-    sql = "SELECT * FROM `states` WHERE BINARY"
+    sql = "SELECT * FROM `states` WHERE BINARY "
     sql += "name='{}' ORDER BY `id` ASC;".format(name)
     cursor.execute(sql)
     [print(record) for record in cursor.fetchall()]  # print records
