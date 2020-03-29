@@ -5,7 +5,7 @@ import MySQLdb as mdb
 from sys import argv
 
 if __name__ == "__main__":
-    user, pwd, data = argv[3], argv[2], argv[1]  # arguments
+    user, pwd, data = argv[1], argv[2], argv[3]  # arguments
     db = mdb.connect(user=user, passwd=pwd, db=data)  # connection
     cursor = db.cursor()  # Cursor class
     # execute query

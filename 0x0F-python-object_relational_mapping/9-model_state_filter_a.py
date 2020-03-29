@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import func
 
 if __name__ == "__main__":
-    user, pwd, data = argv[3], argv[2], argv[1]  # arguments
+    user, pwd, data = argv[1], argv[2], argv[3]  # arguments
     db = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         user, pwd, data)  # data for connection
     engine = create_engine(db, pool_pre_ping=True)  # create connection
