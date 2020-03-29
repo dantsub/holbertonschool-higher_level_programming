@@ -18,7 +18,7 @@ if __name__ == "__main__":
     records = session.query(State).filter_by(name=name).all()  # save records
     # print records
     if records:
-        [print("{}: {}".format(state.id)) for state in records]
+        [print("{}".format(state.id)) for state in records]
     else:
         print("Not found")
     session.close()  # close session
