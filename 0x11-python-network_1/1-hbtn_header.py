@@ -8,7 +8,7 @@ if __name__ == '__main__':
     with request.urlopen(argv[1]) as reponse:
         headers = reponse.getheaders()
         x_id = [item[1] for item in headers if item[0] == "X-Request-Id"]
-        if x_id[0]:
+        try:
             print(x_id[0])
-        else:
+        except:
             print("None")
