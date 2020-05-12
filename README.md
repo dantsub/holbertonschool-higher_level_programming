@@ -1,6 +1,4 @@
-<style>.red {color: red; } th{ background-color: lightblue; color: white; }</style>
-
-# Holbertonschool higher level programming {#indetifier .red}
+# Holbertonschool higher level programming
 
 In this repository you can see my learning progress in higher level programming.
 
@@ -25,6 +23,6 @@ In this repository you can see my learning progress in higher level programming.
 | [0x10-python-network_0](https://github.com/dantsub/holbertonschool-higher_level_programming/tree/master/0x10-python-network_0)                                     |                                               |
 | [0x11-python-network_1](https://github.com/dantsub/holbertonschool-higher_level_programming/tree/master/0x11-python-network_1)                                     |                                               |
 | [0x12-javascript-warm_up](https://github.com/dantsub/holbertonschool-higher_level_programming/tree/master/0x12-javascript-warm_up)                                 |                                               |
-| [0x13-javascript_objects_scopes_closures](https://github.com/dantsub/holbertonschool-higher_level_programming/tree/master/0x13-javascript_objects_scopes_closures) |                                               | {.table}
+| [0x13-javascript_objects_scopes_closures](https://github.com/dantsub/holbertonschool-higher_level_programming/tree/master/0x13-javascript_objects_scopes_closures) |                                               |
 
 * **Joshua Martinez - [dantsub](https://github.com/dantsub)** :octocat:
