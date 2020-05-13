@@ -5,8 +5,8 @@ request
     if (!err) {
       let count = 0;
       const results = JSON.parse(body).results;
-      results.forEach(people => {
-        if (people.characters.find(character => character.endsWith('/18/'))) count++;
+      results.forEach(attr => {
+        if (attr.characters.find(character => character.endsWith('/18/'))) count++;
       });
       console.log(count);
     }
