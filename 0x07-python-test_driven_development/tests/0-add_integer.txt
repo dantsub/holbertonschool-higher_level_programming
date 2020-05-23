@@ -5,7 +5,7 @@ Using ``add_integer``
 ---------------------
 
 import the add_integer module.
->>> add_integer = __import__('test').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
 add positive and negative number
 >>> add_integer(20, -80)
@@ -29,6 +29,11 @@ add, passing two None variables
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+add, passing only one parameter like string
+>>> add_integer("poooxfgs")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
 add, passing only b like string
 >>> add_integer("rosca", 000)
 Traceback (most recent call last):
@@ -37,6 +42,16 @@ TypeError: a must be an integer
 add, passing only floats
 >>> add_integer(float(13), float(5))
 18
+
+missing two args
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+missing one arg
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
 
 infinity convert
 >>> add_integer(float('inf'), 1)
@@ -47,3 +62,7 @@ NaN number
 >>> add_integer(float('nan'), 1)
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
+
+Only one argument
+>>> add_integer(1)
+99
