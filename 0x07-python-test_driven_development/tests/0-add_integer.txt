@@ -5,7 +5,7 @@ Using ``add_integer``
 ---------------------
 
 import the add_integer module.
->>> add_integer = __import__('test').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
 add positive and negative number
 >>> add_integer(20, -80)
