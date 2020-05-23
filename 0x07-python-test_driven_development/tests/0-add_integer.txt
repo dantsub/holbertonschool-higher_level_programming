@@ -29,11 +29,6 @@ add, passing two None variables
 Traceback (most recent call last):
 TypeError: a must be an integer
 
-add, passing only one parameter like string
->>> add_integer("poooxfgs")
-Traceback (most recent call last):
-TypeError: a must be an integer
-
 add, passing only b like string
 >>> add_integer("rosca", 000)
 Traceback (most recent call last):
